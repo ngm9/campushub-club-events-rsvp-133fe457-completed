@@ -14,7 +14,7 @@ app.post('/api/events/:id/rsvp', (req, res) => {
   const id = req.params.id;
   const event = events.find((e) => e.id === id);
 
-  if (!event) {
+  if (event==null) {
     return res.status(404).json({ error: 'Event not found' });
   }
 
